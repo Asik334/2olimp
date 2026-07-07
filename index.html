@@ -3,574 +3,846 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OLIMP STROY MARKET — Пластиковые окна, балконы, двери в Актобе</title>
+<title>OLIMP StroyMarket — окна, двери, балконы в Актобе</title>
+<meta name="description" content="Пластиковые и алюминиевые окна, балконы, двери и остекление коттеджей под ключ в Актобе. Собственное производство. Рассрочка Kaspi и Halyk.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F6F4EE;
-    --paper-deep:#EDE9DD;
-    --ink:#1A1A1A;
-    --red:#D6291D;
-    --red-deep:#A81F16;
-    --yellow:#FFC530;
-    --green:#2E9E4F;
-    --blue:#1C6FB0;
-    --mute:#6B6558;
-    --display:'Bebas Neue', sans-serif;
-    --label:'Oswald', sans-serif;
-    --body:'Inter', sans-serif;
+    --ink:#1e2126;
+    --ink-soft:#33383f;
+    --sand:#efe9db;
+    --sand-deep:#e2d8c2;
+    --paper:#faf7f1;
+    --brick:#a3492f;
+    --brick-deep:#7d341f;
+    --sky:#48739a;
+    --line: rgba(30,33,38,0.14);
+    --radius: 2px;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
+  *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
+    margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:var(--body);
-    line-height:1.5;
+    font-family:'Manrope', -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.55;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+  }
+  h1,h2,h3,h4, .display{
+    font-family:'Golos Text','Manrope', sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
   }
   a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
-  h1,h2,h3{font-family:var(--display); font-weight:400; letter-spacing:0.01em; line-height:0.95;}
-
-  /* STICKER / TAG component — the signature element */
-  .tag{
-    position:relative;
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--label); font-weight:600; font-size:14px;
-    text-transform:uppercase; letter-spacing:0.03em;
-    padding:10px 20px 10px 26px;
-    border:2.5px solid var(--ink);
-    background:#fff;
-    box-shadow:4px 4px 0 var(--ink);
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'Golos Text', sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brick);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
   }
-  .tag::before{
+  .eyebrow::before{
     content:"";
-    position:absolute; left:10px; top:50%; transform:translateY(-50%);
-    width:7px; height:7px; border-radius:50%;
-    background:var(--paper); border:2px solid var(--ink);
-  }
-  .tag.tag-green{background:var(--green); color:#fff; border-color:var(--ink);}
-  .tag.tag-red{background:var(--red); color:#fff;}
-  .tag.tag-yellow{background:var(--yellow); color:var(--ink);}
-  .tag.-r2{transform:rotate(-2deg);}
-  .tag.-r1{transform:rotate(1.5deg);}
-  .tag.-r3{transform:rotate(-1deg);}
-
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:16px 30px;
-    font-family:var(--label); font-weight:600; font-size:16px; text-transform:uppercase; letter-spacing:0.02em;
-    border:2.5px solid var(--ink);
-    cursor:pointer;
-    box-shadow:5px 5px 0 var(--ink);
-    transition:transform .18s ease, box-shadow .18s ease;
-    background:#fff; color:var(--ink);
-  }
-  .btn:hover{ transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink); }
-  .btn-green{ background:#25D366; color:#fff; }
-  .btn-dark{ background:var(--ink); color:var(--paper); }
-
-  /* NAV */
-  header{
-    position:sticky; top:0; z-index:100;
-    background:var(--paper);
-    border-bottom:3px solid var(--ink);
-  }
-  nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
-  .logo{display:flex; align-items:center; gap:10px; font-family:var(--display); font-size:26px; letter-spacing:0.02em;}
-  .logo-mark{width:38px; height:38px; flex-shrink:0; border:2.5px solid var(--ink); background:var(--blue); position:relative;}
-  .logo-mark::after{content:"OS"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--label); font-weight:700; font-size:13px; color:#fff;}
-  .nav-links{display:flex; gap:28px; font-family:var(--label); font-size:14px; text-transform:uppercase; letter-spacing:0.02em; font-weight:500;}
-  .nav-links a{border-bottom:2px solid transparent; padding-bottom:2px;}
-  .nav-links a:hover{border-color:var(--red);}
-  @media (max-width:880px){ .nav-links{display:none;} }
-
-  /* MARQUEE TICKER */
-  .ticker{
-    background:var(--ink); color:var(--yellow);
-    overflow:hidden; white-space:nowrap;
-    border-bottom:3px solid var(--ink);
-  }
-  .ticker-track{
+    width:22px; height:2px;
+    background:var(--brick);
     display:inline-block;
-    padding:10px 0;
-    font-family:var(--label); font-size:13px; text-transform:uppercase; letter-spacing:0.08em;
-    animation: scroll-left 26s linear infinite;
   }
-  .ticker-track span{ margin:0 28px; }
-  @keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-  @media (prefers-reduced-motion: reduce){ .ticker-track{animation:none;} }
+  ::selection{ background:var(--brick); color:#fff; }
 
-  /* HERO */
-  .hero{ padding:64px 0 56px; position:relative; }
-  .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center; }
-  .hero-badges{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:26px; }
-  .hero h1{
-    font-size:clamp(46px, 7vw, 88px);
-    text-transform:uppercase;
+  /* ---------- header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(250,247,241,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
   }
-  .hero h1 .hl{ color:var(--red); }
-  .hero-sub{
-    font-size:17px; color:var(--mute); max-width:480px; margin:24px 0 34px;
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    max-width:1180px; margin:0 auto;
   }
-  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-  .hero-visual{
-    position:relative;
-    aspect-ratio:1/1;
-    border:3px solid var(--ink);
-    background:#fff;
-    box-shadow:8px 8px 0 var(--ink);
-  }
-  .hero-visual svg{width:100%; height:100%; display:block;}
-  .hero-visual .pin{
-    position:absolute; top:-16px; left:50%; transform:translateX(-50%);
-    width:26px; height:26px; border-radius:50%;
-    background:var(--red); border:2.5px solid var(--ink);
-  }
-  .price-float{
-    position:absolute; bottom:-18px; right:-18px;
-    background:var(--yellow); border:2.5px solid var(--ink);
-    padding:12px 18px; box-shadow:4px 4px 0 var(--ink);
-    font-family:var(--label); font-size:13px; text-transform:uppercase; font-weight:600;
-    transform:rotate(-3deg);
-  }
-
-  section{ padding:76px 0; }
-  .section-head{ margin-bottom:44px; max-width:640px; }
-  .section-head .eyebrow-tag{ margin-bottom:16px; }
-  .section-head h2{
-    font-size:clamp(32px, 4.4vw, 54px);
-    text-transform:uppercase;
-  }
-  .section-head p{ color:var(--mute); margin-top:14px; font-size:16px; max-width:480px; }
-
-  /* TRUST STICKERS */
-  .trust-strip{ background:var(--paper-deep); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
-  .trust-row{ display:flex; flex-wrap:wrap; gap:20px; justify-content:center; padding:36px 0; }
-
-  /* CATALOG / SERVICES as spec list */
-  .catalog{ border-top:3px solid var(--ink); }
-  .cat-row{
-    display:grid; grid-template-columns:70px 1fr 1.4fr auto;
-    align-items:center; gap:24px;
-    padding:26px 0;
-    border-bottom:3px solid var(--ink);
-  }
-  .cat-row .cat-num{ font-family:var(--display); font-size:38px; color:var(--red); }
-  .cat-row h3{ font-family:var(--label); font-size:20px; text-transform:uppercase; font-weight:600; letter-spacing:0.01em; }
-  .cat-row p{ color:var(--mute); font-size:14.5px; }
-  .cat-row .cat-icon{ width:42px; height:42px; border:2.5px solid var(--ink); background:#fff; display:flex; align-items:center; justify-content:center; }
-  .cat-row .cat-icon svg{ width:22px; height:22px; }
-  @media (max-width:820px){
-    .cat-row{ grid-template-columns:50px 1fr; }
-    .cat-row .cat-icon{ display:none; }
-    .cat-row p{ grid-column:2/3; }
-  }
-
-  /* WORKS — pinboard */
-  .works{ background:var(--paper-deep); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
-  .works-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
-  .works-grid.works-grid-more{ grid-template-columns:repeat(4,1fr); gap:22px; margin-top:36px; }
-  .polaroid{
-    background:#fff; border:2.5px solid var(--ink); padding:14px 14px 20px;
-    box-shadow:6px 6px 0 var(--ink);
-    position:relative;
-    transition:transform .2s ease;
-    cursor:pointer;
-  }
-  .works-grid-more .polaroid{ padding:8px 8px 14px; box-shadow:4px 4px 0 var(--ink); }
-  .polaroid:nth-child(3n+1){ transform:rotate(-2deg); }
-  .polaroid:nth-child(3n+2){ transform:rotate(1.5deg); }
-  .polaroid:nth-child(3n+3){ transform:rotate(-1deg); }
-  .polaroid:hover{ transform:rotate(0deg) translateY(-4px); }
-  .polaroid .tape{
-    position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(-4deg);
-    width:70px; height:22px; background:rgba(255,197,48,0.85); border:1px solid rgba(0,0,0,0.15);
-  }
-  .polaroid .frame{ aspect-ratio:4/3; overflow:hidden; border:1.5px solid var(--ink); background:#000; }
-  .polaroid .frame svg{ width:100%; height:100%; }
-  .polaroid .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .polaroid figcaption{ padding-top:12px; font-family:var(--label); font-size:14px; text-align:center; text-transform:uppercase; }
-  .works-grid-more figcaption{ font-size:11.5px; padding-top:8px; }
-  .works-note{
-    margin-top:30px; font-size:13.5px; color:var(--mute); text-align:center;
-  }
-
-  /* LIGHTBOX */
-  .lightbox{
-    position:fixed; inset:0; background:rgba(10,10,10,0.92); z-index:1000;
-    display:none; align-items:center; justify-content:center; padding:40px;
-  }
-  .lightbox.open{ display:flex; }
-  .lightbox img{ max-width:min(90vw,900px); max-height:85vh; border:3px solid #fff; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
-  .lightbox-close{
-    position:absolute; top:24px; right:28px; width:44px; height:44px;
-    border:2.5px solid #fff; background:transparent; color:#fff; font-family:var(--label);
-    font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  }
-
-  /* PROCESS — ticket stub */
-  .process-strip{ display:flex; overflow-x:auto; gap:0; border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
-  .ticket{
-    flex:1 0 200px;
-    padding:28px 22px;
-    border-right:3px dashed var(--ink);
-    position:relative;
-  }
-  .ticket:last-child{ border-right:none; }
-  .ticket .step-n{ font-family:var(--display); font-size:34px; color:var(--blue); }
-  .ticket h4{ font-family:var(--label); font-size:15px; text-transform:uppercase; font-weight:600; margin:8px 0 6px; }
-  .ticket p{ font-size:13px; color:var(--mute); }
-
-  /* PROFILES — stamps */
-  .profiles-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
-  .stamp-card{
-    border:2.5px solid var(--ink); background:#fff; padding:36px;
-    position:relative;
-  }
-  .stamp-badge{
-    width:74px; height:74px; border-radius:50%; border:3px solid var(--ink);
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-mark{
+    width:38px; height:38px; flex:none;
+    background:var(--ink);
     display:flex; align-items:center; justify-content:center;
-    font-family:var(--display); font-size:20px;
-    margin-bottom:18px;
-    transform:rotate(-8deg);
+    position:relative;
   }
-  .stamp-badge.de{ background:var(--yellow); }
-  .stamp-badge.ru{ background:#fff; border-color:var(--blue); color:var(--blue); }
-  .stamp-card h3{ font-family:var(--label); text-transform:uppercase; font-size:22px; font-weight:600; margin-bottom:10px; }
-  .stamp-card p{ color:var(--mute); font-size:14.5px; margin-bottom:16px; }
-  .stamp-card ul{ list-style:none; font-size:14px; }
-  .stamp-card li{ padding:8px 0; border-top:1.5px solid var(--paper-deep); }
-  .stamp-card li:first-child{ border-top:none; }
-  .stamp-card li::before{ content:"✓ "; color:var(--green); font-weight:700; }
-
-  /* INSTALLMENT — card mockup */
-  .installment{ background:var(--ink); color:var(--paper); border-top:3px solid var(--ink); }
-  .installment .section-head p{ color:rgba(246,244,238,0.6); }
-  .inst-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:center; }
-  .bank-card{
-    background:linear-gradient(135deg, #2a2a2a, #111);
-    border:2.5px solid var(--yellow);
-    border-radius:14px;
-    padding:28px;
-    color:#fff;
-    font-family:var(--label);
-    box-shadow:6px 6px 0 rgba(255,197,48,0.25);
+  .brand-mark svg{ width:22px; height:22px; }
+  .brand-name{
+    font-family:'Golos Text', sans-serif;
+    font-weight:800; font-size:16.5px; letter-spacing:-0.01em; line-height:1.05;
+    color:var(--ink);
   }
-  .bank-card .chip{ width:42px; height:30px; background:var(--yellow); border-radius:4px; margin-bottom:26px; }
-  .bank-card .num{ letter-spacing:0.15em; font-size:18px; margin-bottom:22px; }
-  .bank-card .row{ display:flex; justify-content:space-between; font-size:12px; text-transform:uppercase; color:rgba(255,255,255,0.65); }
-  .inst-copy ul{ list-style:none; font-size:15px; }
-  .inst-copy li{ padding:12px 0; border-top:1.5px solid rgba(246,244,238,0.2); }
-  .inst-copy li:first-child{ border-top:none; }
-  .inst-copy li::before{ content:"— "; color:var(--yellow); }
+  .brand-name span{
+    display:block; font-family:'Manrope',sans-serif; font-weight:600;
+    font-size:10px; letter-spacing:0.1em; color:var(--ink-soft); text-transform:uppercase; margin-top:2px;
+  }
+  nav.links{ display:flex; gap:30px; }
+  nav.links a{
+    font-size:14.5px; font-weight:600; color:var(--ink-soft);
+    position:relative; padding:4px 0;
+    transition:color .2s;
+  }
+  nav.links a:hover{ color:var(--brick); }
+  .nav-cta{
+    display:flex; align-items:center; gap:16px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-family:'Golos Text',sans-serif; font-weight:700; font-size:14.5px;
+    padding:13px 24px;
+    border:1px solid var(--ink);
+    cursor:pointer;
+    transition:transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--brick); border-color:var(--brick); color:#fff; }
+  .btn-primary:hover{ background:var(--brick-deep); border-color:var(--brick-deep); transform:translateY(-2px); }
+  .btn-dark{ background:var(--ink); color:#fff; }
+  .btn-dark:hover{ transform:translateY(-2px); }
+  .btn-ghost{ background:transparent; color:var(--ink); }
+  .btn-ghost:hover{ background:var(--ink); color:#fff; }
+  .btn-sm{ padding:10px 18px; font-size:13px; }
+  .header-phone{ display:none; }
 
-  /* CONTACT */
-  .contact{ background:var(--red); color:#fff; border-top:3px solid var(--ink); }
-  .contact-inner{ text-align:center; max-width:640px; margin:0 auto; }
-  .contact h2{ font-size:clamp(36px,5.6vw,64px); text-transform:uppercase; margin-bottom:18px; }
-  .contact p{ font-size:17px; margin-bottom:32px; opacity:0.92; }
-  .contact-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  /* ---------- mobile burger menu ---------- */
+  .burger{
+    display:none; flex:none;
+    width:42px; height:42px;
+    align-items:center; justify-content:center;
+    background:transparent; border:1px solid var(--ink);
+    cursor:pointer; padding:0;
+  }
+  .burger span, .burger span::before, .burger span::after{
+    content:""; display:block; width:20px; height:2px; background:var(--ink);
+    position:relative; transition:transform .25s ease, opacity .25s ease, top .25s ease;
+  }
+  .burger span::before{ position:absolute; top:-6px; }
+  .burger span::after{ position:absolute; top:6px; }
+  .burger.active span{ background:transparent; }
+  .burger.active span::before{ top:0; transform:rotate(45deg); }
+  .burger.active span::after{ top:0; transform:rotate(-45deg); }
 
-  footer{ background:var(--ink); color:rgba(246,244,238,0.55); padding:26px 0; font-family:var(--label); font-size:12.5px; text-transform:uppercase; letter-spacing:0.03em; }
-  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .mobile-menu{
+    display:none;
+    position:fixed; top:67px; left:0; right:0; bottom:0; z-index:99;
+    background:var(--paper);
+    transform:translateY(-8px); opacity:0; pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease;
+    overflow-y:auto;
+  }
+  .mobile-menu.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .mobile-menu nav{ display:flex; flex-direction:column; padding:10px 24px 30px; }
+  .mobile-menu nav a{
+    font-family:'Golos Text',sans-serif; font-weight:700; font-size:19px;
+    color:var(--ink); padding:18px 0; border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .btn{ margin-top:26px; width:100%; }
 
-  .reveal{ opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (max-width: 980px){
+    nav.links{ display:none; }
+    .burger{ display:flex; }
+  }
+  @media (min-width: 981px){
+    .mobile-menu{ display:none !important; }
+  }
 
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    margin-top:0;
+    min-height:100svh;
+    display:flex; align-items:flex-end;
+    padding-top:120px;
+    overflow:hidden;
+    background:var(--ink);
+  }
+  .hero-img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0.62;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,22,26,0.35) 0%, rgba(20,22,26,0.35) 35%, rgba(18,20,23,0.92) 92%),
+               linear-gradient(90deg, rgba(18,20,23,0.55) 0%, rgba(18,20,23,0.05) 55%);
+  }
+  .hero-grid-overlay{
+    position:absolute; inset:0; pointer-events:none; opacity:0.5;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    width:100%;
+    padding:64px 24px 72px;
+    max-width:1180px; margin:0 auto;
+  }
+  .hero-tag{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Golos Text',sans-serif; font-size:12.5px; font-weight:700;
+    letter-spacing:0.14em; text-transform:uppercase; color:#e7dfcf;
+    border:1px solid rgba(255,255,255,0.35);
+    padding:8px 14px; margin-bottom:26px;
+  }
+  .hero-tag .dot{ width:6px; height:6px; background:#7fbf6a; border-radius:50%; display:inline-block; }
+  h1.hero-title{
+    font-size:clamp(38px, 6vw, 74px);
+    line-height:0.98;
+    color:#fbf8f2;
+    max-width:820px;
+    text-wrap:balance;
+  }
+  h1.hero-title em{
+    font-style:normal; color:var(--sand); position:relative; display:inline-block;
+    background:linear-gradient(180deg, transparent 62%, rgba(163,73,47,0.75) 62%);
+  }
+  .hero-sub{
+    margin-top:26px; max-width:520px;
+    color:#d7d0c1; font-size:17px; font-weight:500;
+  }
+  .hero-actions{ margin-top:38px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+  .hero-stats{
+    margin-top:56px; display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.22);
+    padding-top:24px;
+    max-width:820px;
+  }
+  .hero-stat{
+    padding:0 30px 0 0; margin-right:30px;
+    border-right:1px solid rgba(255,255,255,0.22);
+  }
+  .hero-stat:last-child{ border-right:none; }
+  .hero-stat b{
+    display:block; font-family:'Golos Text',sans-serif; font-size:26px; font-weight:800; color:#fff;
+  }
+  .hero-stat span{ font-size:12.5px; color:#c9c1b0; font-weight:600; }
+
+  /* ---------- marquee strip ---------- */
+  .strip{
+    background:var(--ink); color:var(--sand);
+    overflow:hidden; white-space:nowrap;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .strip-track{
+    display:inline-flex;
+    animation: marquee 34s linear infinite;
+  }
+  .strip-track span{
+    display:inline-flex; align-items:center;
+    font-family:'Golos Text',sans-serif; font-weight:700; font-size:13.5px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    padding:14px 34px;
+    border-right:1px solid rgba(255,255,255,0.14);
+  }
+  @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .strip-track{ animation:none; } }
+
+  /* ---------- sections general ---------- */
+  section{ padding:100px 0; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:40px;
+    margin-bottom:56px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(30px,4vw,46px); max-width:640px; line-height:1.05; }
+  .section-head p{ max-width:380px; color:var(--ink-soft); font-size:15.5px; padding-bottom:4px; }
+
+  /* ---------- why us ---------- */
+  .why{ background:var(--sand); }
+  .why-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .why-card{
+    background:var(--sand); padding:34px 30px; min-height:210px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:background .2s;
+  }
+  .why-card:hover{ background:var(--paper); }
+  .why-card .icon{ width:34px; height:34px; color:var(--brick); margin-bottom:22px; }
+  .why-card h3{ font-size:18px; margin-bottom:8px; }
+  .why-card p{ font-size:14.5px; color:var(--ink-soft); margin:0; }
+  @media (max-width:900px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .why-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- services ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:26px;
+  }
+  .service-card{
+    border:1px solid var(--line);
+    padding:0;
+    display:flex; flex-direction:column;
+    background:#fff;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .service-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(30,33,38,0.25); }
+  .service-num{
+    font-family:'Golos Text',sans-serif; font-weight:800; font-size:13px; color:#b7ad97;
+    padding:18px 22px 0;
+  }
+  .service-card h3{ font-size:19px; padding:6px 22px 0; }
+  .service-card p{ font-size:14px; color:var(--ink-soft); padding:10px 22px 24px; margin:0; flex:1; }
+  @media (max-width:900px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .services-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- production ---------- */
+  .production{ background:var(--ink); color:var(--sand); }
+  .production .wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;
+  }
+  .production h2{ color:#fbf8f2; }
+  .production .eyebrow{ color:#e6a184; }
+  .production .eyebrow::before{ background:#e6a184; }
+  .production p{ color:#c9c1b0; font-size:15.5px; margin-top:22px; }
+  .production-list{ list-style:none; padding:0; margin:30px 0 0; display:flex; flex-direction:column; gap:16px; }
+  .production-list li{
+    display:flex; gap:14px; align-items:flex-start; font-size:14.5px; color:#e6e0d1;
+  }
+  .production-list li svg{ width:18px; height:18px; flex:none; margin-top:2px; color:#7fbf6a; }
+  .production-photo{ position:relative; }
+  .production-photo img{ width:100%; height:100%; object-fit:cover; aspect-ratio:4/5; }
+  .production-photo .frame-tag{
+    position:absolute; bottom:-1px; left:-1px;
+    background:var(--brick); color:#fff;
+    font-family:'Golos Text',sans-serif; font-weight:700; font-size:12.5px;
+    letter-spacing:0.06em; text-transform:uppercase;
+    padding:12px 18px;
+  }
+  @media (max-width:900px){ .production .wrap{ grid-template-columns:1fr; gap:40px; } .production-photo{ order:-1; } }
+
+  /* ---------- gallery ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:190px;
+    grid-auto-flow:dense;
+    gap:14px;
+  }
+  .gitem{
+    position:relative; overflow:hidden; background:var(--ink);
+    border:1px solid var(--line);
+  }
+  .gitem img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .gitem:hover img{ transform:scale(1.08); }
+  .gitem .cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 16px;
+    background:linear-gradient(0deg, rgba(15,16,18,0.88), transparent);
+    color:#f2ede0; font-size:12.5px; font-weight:600;
+    opacity:0; transform:translateY(6px);
+    transition:opacity .25s, transform .25s;
+  }
+  .gitem:hover .cap{ opacity:1; transform:translateY(0); }
+  @media (hover:none){
+    .gitem .cap{ opacity:1; transform:translateY(0); font-size:12px; padding:12px 14px; }
+  }
+  .gitem.tall{ grid-row: span 2; }
+  .gitem.wide{ grid-column: span 2; }
   @media (max-width:900px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .works-grid{ grid-template-columns:1fr 1fr; }
-    .works-grid-more{ grid-template-columns:repeat(3,1fr); }
-    .profiles-grid{ grid-template-columns:1fr; }
-    .inst-grid{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:170px; }
+    .gitem.wide{ grid-column:span 2; }
   }
   @media (max-width:560px){
-    .works-grid{ grid-template-columns:1fr; }
-    .works-grid-more{ grid-template-columns:1fr 1fr; }
+    .gallery-grid{ grid-template-columns:1fr; grid-auto-rows:220px; gap:10px; }
+    .gitem.wide, .gitem.tall{ grid-column:span 1; grid-row:span 1; }
+  }
+
+  /* ---------- financing ---------- */
+  .financing{ background:var(--sand-deep); }
+  .fin-row{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center;
+  }
+  .fin-badges{ display:flex; gap:16px; margin-top:30px; flex-wrap:wrap; }
+  .fin-badge{
+    border:1px solid var(--ink); background:var(--paper);
+    padding:16px 22px; font-family:'Golos Text',sans-serif; font-weight:800; font-size:15px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .fin-badge small{ display:block; font-family:'Manrope',sans-serif; font-weight:600; font-size:11px; color:var(--ink-soft); }
+  .fin-panel{
+    background:var(--ink); color:#fff; padding:44px 36px;
+  }
+  .fin-panel .big{ font-family:'Golos Text',sans-serif; font-weight:900; font-size:56px; line-height:1; color:#fff; }
+  .fin-panel .big span{ font-size:22px; font-weight:700; color:#c9c1b0; }
+  .fin-panel p{ color:#c9c1b0; font-size:14px; margin-top:14px; }
+  @media (max-width:900px){ .fin-row{ grid-template-columns:1fr; gap:36px; } }
+
+  /* ---------- contact ---------- */
+  .contact{ background:var(--ink); color:#fff; }
+  .contact .eyebrow{ color:#e6a184; }
+  .contact .eyebrow::before{ background:#e6a184; }
+  .contact-grid{
+    display:grid; grid-template-columns:1.2fr 1fr; gap:70px;
+  }
+  .contact h2{ color:#fbf8f2; font-size:clamp(30px,4vw,48px); max-width:520px; }
+  .contact-desc{ color:#c9c1b0; margin-top:20px; max-width:440px; font-size:15.5px; }
+  .contact-links{ margin-top:38px; display:flex; flex-direction:column; gap:2px; }
+  .contact-link{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 0; border-top:1px solid rgba(255,255,255,0.16);
+    font-family:'Golos Text',sans-serif; font-weight:700; font-size:17px;
+    color:#fff;
+  }
+  .contact-link:last-child{ border-bottom:1px solid rgba(255,255,255,0.16); }
+  .contact-link small{
+    display:block; font-family:'Manrope',sans-serif; font-weight:600; font-size:12px; color:#9a917d; margin-top:4px;
+  }
+  .contact-link .arrow{ transition:transform .2s; opacity:0.7; }
+  .contact-link:hover .arrow{ transform:translateX(6px); opacity:1; }
+
+  .form-card{
+    background:var(--sand); color:var(--ink);
+    padding:36px 30px;
+  }
+  .form-card h3{ font-size:20px; margin-bottom:6px; }
+  .form-card p{ font-size:13.5px; color:var(--ink-soft); margin:0 0 24px; }
+  .form-field{ margin-bottom:16px; }
+  .form-field label{ display:block; font-size:12.5px; font-weight:700; margin-bottom:7px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em; }
+  .form-field input, .form-field select{
+    width:100%; border:1px solid var(--ink); background:var(--paper);
+    padding:13px 14px; font-family:'Manrope',sans-serif; font-size:14.5px; color:var(--ink);
+  }
+  .form-field input:focus, .form-field select:focus{ outline:2px solid var(--brick); outline-offset:1px; }
+  .form-card .btn{ width:100%; margin-top:6px; }
+  .form-note{ font-size:11.5px; color:var(--ink-soft); margin-top:12px; }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+
+  /* ---------- footer ---------- */
+  footer{ background:#15171a; color:#8a8477; padding:34px 0; }
+  .footer-row{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+    font-size:13px;
+  }
+  .footer-row a{ color:#c9c1b0; }
+  .footer-row a:hover{ color:#fff; }
+
+  /* ---------- floating whatsapp ---------- */
+  .float-wa{
+    position:fixed; right:22px; bottom:22px; z-index:200;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 30px -8px rgba(0,0,0,0.5);
+    transition:transform .2s;
+  }
+  .float-wa:hover{ transform:scale(1.08); }
+  .float-wa svg{ width:28px; height:28px; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (max-width:700px){
+    section{ padding:56px 0; }
+    .why-card{ padding:26px 22px; }
+    .section-head{ margin-bottom:36px; gap:14px; }
+    .section-head p{ max-width:none; }
+    .nav{ padding:12px 18px; }
+    .brand-name{ font-size:14.5px; }
+    .brand-mark{ width:34px; height:34px; }
+    .nav-cta .btn-sm{ padding:9px 14px; font-size:12.5px; }
+    .hero{ padding-top:96px; align-items:flex-end; }
+    .hero-inner{ padding:40px 18px 48px; }
+    .hero-actions{ flex-direction:column; align-items:stretch; }
+    .hero-actions .btn{ width:100%; }
+    .hero-stats{ gap:0; margin-top:36px; }
+    .hero-stat{ padding:0 16px 0 0; margin-right:16px; }
+    .hero-stat b{ font-size:21px; }
+    .wrap{ padding:0 18px; }
+    .fin-panel{ padding:32px 24px; }
+    .form-card{ padding:28px 22px; }
+    .float-wa{ width:52px; height:52px; right:16px; bottom:16px; }
+  }
+  @media (max-width:420px){
+    h1.hero-title{ font-size:34px; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <nav class="wrap">
-    <div class="logo">
-      <div class="logo-mark"></div>
-      OLIMP STROY
-    </div>
-    <div class="nav-links">
-      <a href="#works">Работы</a>
-      <a href="#catalog">Услуги</a>
-      <a href="#process">Как заказать</a>
-      <a href="#installment">Рассрочка</a>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 3H21V21H3V3Z" stroke="#efe9db" stroke-width="1.6"/><path d="M12 3V21M3 12H21" stroke="#efe9db" stroke-width="1.6"/></svg>
+      </div>
+      <div class="brand-name">OLIMP StroyMarket<span>Окна · Балконы · Двери · Актобе</span></div>
+    </a>
+    <nav class="links">
+      <a href="#services">Услуги</a>
+      <a href="#production">Производство</a>
+      <a href="#gallery">Наши работы</a>
+      <a href="#financing">Рассрочка</a>
       <a href="#contact">Контакты</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="https://wa.me/77058663188" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
     </div>
-    <a class="btn btn-green" href="https://wa.me/77058663188" target="_blank" rel="noopener">WhatsApp</a>
-  </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#production">Производство</a>
+      <a href="#gallery">Наши работы</a>
+      <a href="#financing">Рассрочка</a>
+      <a href="#contact">Контакты</a>
+      <a class="btn btn-primary" href="https://wa.me/77058663188" target="_blank" rel="noopener">Написать в WhatsApp</a>
+    </nav>
+  </div>
 </header>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span>★ ГАРАНТИЯ 2 ГОДА</span><span>★ РАССРОЧКА KASPI И HALYK</span><span>★ НЕМЕЦКОЕ И РОССИЙСКОЕ ПРОИЗВОДСТВО</span><span>★ СВОЙ МОНТАЖ В АКТОБЕ</span>
-    <span>★ ГАРАНТИЯ 2 ГОДА</span><span>★ РАССРОЧКА KASPI И HALYK</span><span>★ НЕМЕЦКОЕ И РОССИЙСКОЕ ПРОИЗВОДСТВО</span><span>★ СВОЙ МОНТАЖ В АКТОБЕ</span>
-  </div>
-</div>
-
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="hero-badges">
-        <span class="tag tag-green -r2">Гарантия 2 года ✓</span>
-        <span class="tag tag-yellow -r1">Рассрочка 0%</span>
-      </div>
-      <h1>Окна и балконы<br><span class="hl">под ключ</span> в Актобе</h1>
-      <p class="hero-sub">Немецкие и российские профили, бесплатный замер, монтаж своей бригадой. Оформим Kaspi или Halyk рассрочку прямо на объекте.</p>
-      <div class="hero-actions">
-        <a class="btn btn-green" href="https://wa.me/77058663188" target="_blank" rel="noopener">Написать в WhatsApp</a>
-        <a class="btn btn-dark" href="#catalog">Смотреть услуги</a>
-      </div>
+<section class="hero" id="top">
+  <img class="hero-img" src="images/work-stone-house-main.jpg" alt="Дом со стеклопакетами и алюминиевыми окнами, реализованный проект OLIMP StroyMarket в Актобе">
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="dot"></span>Актобе и область · замер бесплатно</div>
+    <h1 class="hero-title">Остекление<br>домов <em>под ключ</em></h1>
+    <p class="hero-sub">Пластиковые и алюминиевые окна, входные группы и балконы. Профили Германия / Россия. От замера до монтажа — своими бригадами и на собственном производстве.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/77058663188" target="_blank" rel="noopener">Рассчитать стоимость окон</a>
+      <a class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5); color:#fbf8f2;" href="#gallery">Смотреть наши работы ↓</a>
     </div>
-    <div class="hero-visual">
-      <div class="pin"></div>
-      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
-        <rect width="400" height="400" fill="#EDE9DD"/>
-        <rect x="60" y="70" width="280" height="260" fill="#fff" stroke="#1A1A1A" stroke-width="4"/>
-        <line x1="200" y1="70" x2="200" y2="330" stroke="#1A1A1A" stroke-width="4"/>
-        <line x1="60" y1="200" x2="340" y2="200" stroke="#1A1A1A" stroke-width="4"/>
-        <rect x="72" y="82" width="116" height="106" fill="#BFE0EE"/>
-        <rect x="212" y="82" width="116" height="106" fill="#9FCBE0"/>
-        <rect x="72" y="212" width="116" height="106" fill="#9FCBE0"/>
-        <rect x="212" y="212" width="116" height="106" fill="#BFE0EE"/>
-      </svg>
-      <div class="price-float">Замер — бесплатно</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>912+</b><span>подписчиков в Instagram</span></div>
+      <div class="hero-stat"><b>2 года</b><span>гарантии на конструкции</span></div>
+      <div class="hero-stat"><b>0%</b><span>рассрочка Kaspi и Halyk</span></div>
     </div>
   </div>
 </section>
 
-<div class="trust-strip">
-  <div class="wrap trust-row reveal">
-    <span class="tag tag-green -r1">Гарантия 2 года ✓</span>
-    <span class="tag tag-red -r2">Супер цена ✓</span>
-    <span class="tag tag-yellow -r3">Хорошая шумоизоляция ✓</span>
-    <span class="tag -r1">Немецкое / российское производство</span>
-    <span class="tag -r2">Рассрочка Kaspi · Halyk</span>
+<div class="strip">
+  <div class="strip-track">
+    <span>Пластиковые окна</span><span>Алюминиевые окна и двери</span><span>Остекление балконов</span><span>Входные группы</span><span>Остекление коттеджей под ключ</span><span>Панорамное остекление</span>
+    <span>Пластиковые окна</span><span>Алюминиевые окна и двери</span><span>Остекление балконов</span><span>Входные группы</span><span>Остекление коттеджей под ключ</span><span>Панорамное остекление</span>
   </div>
 </div>
 
-<section id="catalog" class="catalog">
+<section class="why" id="why">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="tag tag-red eyebrow-tag -r1">Прайс-лист услуг</span>
-      <h2>Что мы устанавливаем</h2>
-      <p>Работаем с одним окном в квартире и с полным остеклением коттеджа на этапе строительства.</p>
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Почему выбирают нас</div>
+        <h2>Не просто продаём окна — строим и монтируем сами</h2>
+      </div>
+      <p>Собственный цех в Актобе, свои замерщики и монтажники. Ни одного этапа на подряде — от профиля до откосов.</p>
     </div>
-    <div class="reveal">
-      <div class="cat-row">
-        <div class="cat-num">01</div>
-        <h3>Окна ПВХ</h3>
-        <p>Немецкие и российские профили, энергосберегающие стеклопакеты, тихая фурнитура.</p>
-        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><rect x="3" y="3" width="18" height="18"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V8L12 3L21 8V21" /><path d="M9 21V13H15V21"/></svg>
+          <h3>Собственное производство</h3>
+        </div>
+        <p>Свой цех в Актобе: режем и собираем конструкции сами, без посредников — это и контроль качества, и честная цена.</p>
       </div>
-      <div class="cat-row">
-        <div class="cat-num">02</div>
-        <h3>Остекление балконов</h3>
-        <p>Холодное и тёплое остекление, отделка, утепление, расширение пространства.</p>
-        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><path d="M4 21V9l8-6 8 6v12"/><line x1="12" y1="9" x2="12" y2="21"/></svg></div>
+      <div class="why-card reveal">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10H21M9 4V20"/></svg>
+          <h3>Профиль Германия / Россия</h3>
+        </div>
+        <p>Работаем на проверенных немецких и российских профильных системах — держат тепло и не желтеют на солнце.</p>
       </div>
-      <div class="cat-row">
-        <div class="cat-num">03</div>
+      <div class="why-card reveal">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10H22"/></svg>
+          <h3>Рассрочка без переплат</h3>
+        </div>
+        <p>Оформляем прямо на месте через Kaspi Bank и Halyk — можно поставить окна сейчас, а платить постепенно.</p>
+      </div>
+      <div class="why-card reveal">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L20 6.5V11C20 16 16.5 19.5 12 21C7.5 19.5 4 16 4 11V6.5L12 3Z"/></svg>
+          <h3>Гарантия 2 года</h3>
+        </div>
+        <p>Отвечаем за фурнитуру, стеклопакет и монтаж — если что-то не так, приезжаем и устраняем сами.</p>
+      </div>
+      <div class="why-card reveal">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14"/></svg>
+          <h3>Бесплатный замер</h3>
+        </div>
+        <p>Приезжаем, снимаем размеры и считаем стоимость на месте — без обязательств купить именно у нас.</p>
+      </div>
+      <div class="why-card reveal">
+        <div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V9L12 4L20 9V21"/><path d="M9 21V15H15V21"/><path d="M4 9H20"/></svg>
+          <h3>Дома и коттеджи под ключ</h3>
+        </div>
+        <p>Берём объект целиком: окна, входные группы, балконы и веранды — с одной бригадой и общими сроками.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Что мы делаем</div>
+        <h2>Окна, двери и остекление — на любой объект</h2>
+      </div>
+      <p>Частный дом, квартира, балкон или коммерческое помещение — считаем и монтируем под конкретную задачу.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <h3>Пластиковые окна ПВХ</h3>
+        <p>Немецкий и российский профиль, энергосберегающие стеклопакеты, тихий монтаж по ГОСТу.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <h3>Алюминиевые окна и двери</h3>
+        <p>Узкие рамы, максимум света, прочные конструкции для больших проёмов и панорамных проектов.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <h3>Остекление балконов и лоджий</h3>
+        <p>Тёплое и холодное остекление, отделка откосов, увеличение полезной площади квартиры.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
         <h3>Входные и межкомнатные двери</h3>
-        <p>Металлопластиковые входные группы и межкомнатные двери в комплекте с окнами.</p>
-        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="1"/><circle cx="14" cy="12" r="0.8" fill="#1A1A1A"/></svg></div>
+        <p>Алюминиевые входные группы со стеклом — для частного дома, офиса или магазина.</p>
       </div>
-      <div class="cat-row">
-        <div class="cat-num">04</div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
         <h3>Остекление коттеджей под ключ</h3>
-        <p>Полный цикл на этапе стройки: замер по проекту, поставка, монтаж всех проёмов.</p>
-        <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><path d="M3 21h18M5 21V11l7-6 7 6v10M9 21v-5h6v5"/></svg></div>
+        <p>Полный цикл: замер, проект, изготовление и монтаж окон по всему дому — от фундамента до крыши.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <h3>Панорамное остекление</h3>
+        <p>Большие проёмы и угловые окна без лишних перемычек — максимум обзора и естественного света.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="works" class="works">
+<section class="production" id="production">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="tag tag-yellow eyebrow-tag -r2">Примеры объектов</span>
-      <h2>Наши работы в Актобе</h2>
+    <div>
+      <div class="eyebrow">Как мы это делаем</div>
+      <h2>Собственный цех — своя ответственность</h2>
+      <p>Конструкции собираем на своей производственной базе в Актобе: раскрой профиля, армирование, установка фурнитуры и стеклопакетов — под контролем на каждом этапе, а не «где-то у подрядчика».</p>
+      <ul class="production-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L9 17L20 6"/></svg>Раскрой и сборка окон и дверей на собственной базе</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L9 17L20 6"/></svg>Свои монтажные бригады — без подрядчиков со стороны</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12L9 17L20 6"/></svg>Проверка каждой конструкции перед доставкой на объект</li>
+      </ul>
+      <a class="btn btn-primary" style="margin-top:32px;" href="https://wa.me/77058663188" target="_blank" rel="noopener">Узнать сроки и цену</a>
     </div>
-    <div class="works-grid reveal">
-      <figure class="polaroid" onclick="openLightbox('images/work-stone-house-1.jpg')">
-        <div class="tape"></div>
-        <div class="frame"><img src="images/work-stone-house-1.jpg" alt="Дом из ракушечника — окна и входная дверь" loading="lazy"></div>
-        <figcaption>Частный дом — окна и дверь</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-entrance-brick.jpg')">
-        <div class="tape"></div>
-        <div class="frame"><img src="images/work-entrance-brick.jpg" alt="Входная группа частного дома, красный кирпич" loading="lazy"></div>
-        <figcaption>Входная группа под ключ</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-door-closeup.jpg')">
-        <div class="tape"></div>
-        <div class="frame"><img src="images/work-door-closeup.jpg" alt="Монтаж алюминиевой входной двери" loading="lazy"></div>
-        <figcaption>Монтаж входной двери</figcaption>
-      </figure>
+    <div class="production-photo">
+      <img src="images/work-facade-window.jpg" alt="Производственный цех OLIMP StroyMarket — стопки готовых пластиковых окон перед доставкой">
+      <div class="frame-tag">Цех в Актобе</div>
     </div>
-
-    <div class="works-grid works-grid-more reveal">
-      <figure class="polaroid" onclick="openLightbox('images/work-corner-window-brick.jpg')">
-        <div class="frame"><img src="images/work-corner-window-brick.jpg" alt="Окна частного дома, красный кирпич" loading="lazy"></div>
-        <figcaption>Окна ПВХ, частный дом</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-stone-house-2.jpg')">
-        <div class="frame"><img src="images/work-stone-house-2.jpg" alt="Дом из ракушечника, вид с фасада" loading="lazy"></div>
-        <figcaption>Остекление коттеджа</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-building-glazing.jpg')">
-        <div class="frame"><img src="images/work-building-glazing.jpg" alt="Остекление административного здания" loading="lazy"></div>
-        <figcaption>Остекление здания</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-warehouse-frames.jpg')">
-        <div class="frame"><img src="images/work-warehouse-frames.jpg" alt="Готовые оконные рамы на производстве" loading="lazy"></div>
-        <figcaption>Собственное производство</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-extra-01.jpg')">
-        <div class="frame"><img src="images/work-extra-01.jpg" alt="Объект OLIMP STROY MARKET" loading="lazy"></div>
-        <figcaption>Наш объект</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-extra-02.jpg')">
-        <div class="frame"><img src="images/work-extra-02.jpg" alt="Объект OLIMP STROY MARKET" loading="lazy"></div>
-        <figcaption>Наш объект</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-extra-04.jpg')">
-        <div class="frame"><img src="images/work-extra-04.jpg" alt="Объект OLIMP STROY MARKET" loading="lazy"></div>
-        <figcaption>Наш объект</figcaption>
-      </figure>
-      <figure class="polaroid" onclick="openLightbox('images/work-extra-06.jpg')">
-        <div class="frame"><img src="images/work-extra-06.jpg" alt="Объект OLIMP STROY MARKET" loading="lazy"></div>
-        <figcaption>Наш объект</figcaption>
-      </figure>
-    </div>
-
-    <p class="works-note reveal">Показаны реальные объекты компании. Нажмите на фото, чтобы увеличить.</p>
   </div>
 </section>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightbox-img" src="" alt="Фото объекта">
-</div>
-
-<section id="process">
+<section id="gallery" style="background:var(--sand);">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="tag tag-red eyebrow-tag -r1">Как заказать</span>
-      <h2>От заявки до гарантии</h2>
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Портфолио</div>
+        <h2>Наши объекты в Актобе и области</h2>
+      </div>
+      <p>Реальные фото с монтажей — от каркаса из ракушечника до готового фасада с остеклением.</p>
     </div>
-  </div>
-  <div class="process-strip reveal">
-    <div class="ticket"><div class="step-n">01</div><h4>Заявка в WhatsApp</h4><p>Пишете номер и адрес объекта.</p></div>
-    <div class="ticket"><div class="step-n">02</div><h4>Бесплатный замер</h4><p>Точные размеры проёмов на месте.</p></div>
-    <div class="ticket"><div class="step-n">03</div><h4>Расчёт и рассрочка</h4><p>Смета и оформление Kaspi/Halyk.</p></div>
-    <div class="ticket"><div class="step-n">04</div><h4>Производство</h4><p>Изготовление под точные размеры.</p></div>
-    <div class="ticket"><div class="step-n">05</div><h4>Монтаж</h4><p>Устанавливает своя бригада.</p></div>
-    <div class="ticket"><div class="step-n">06</div><h4>Гарантия 2 года</h4><p>Приедем, если нужна регулировка.</p></div>
+    <div class="gallery-grid">
+      <div class="gitem wide tall reveal">
+        <img src="images/work-stone-house-main.jpg" alt="Готовый дом из ракушечника с алюминиевыми окнами, угловой ракурс">
+        <div class="cap">Дом под ключ · алюминиевые окна</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-showroom.jpg" alt="Офис и шоурум OLIMP StroyMarket с остеклённым фасадом">
+        <div class="cap">Шоурум OLIMP StroyMarket</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-office-building.jpg" alt="Остекление многоэтажного административного здания">
+        <div class="cap">Остекление админздания</div>
+      </div>
+      <div class="gitem tall reveal">
+        <img src="images/work-entrance-brick.jpg" alt="Входная алюминиевая дверь тёмного цвета в кирпичном доме">
+        <div class="cap">Входная группа · коттедж</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-window-install.jpg" alt="Монтаж пластикового окна, крупный план профиля">
+        <div class="cap">Монтаж окна · крупный план</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-corner-window-brick.jpg" alt="Угол дома из ракушечника с чёрными оконными рамами">
+        <div class="cap">Пластиковые окна · коттедж</div>
+      </div>
+      <div class="gitem wide reveal">
+        <img src="images/work-cottage-veranda.jpg" alt="Остеклённая веранда загородного дома из кирпича">
+        <div class="cap">Остекление веранды</div>
+      </div>
+      <div class="gitem wide reveal">
+        <img src="images/work-production-hall.jpg" alt="Собственное производство — цех со стеллажами готовых оконных рам">
+        <div class="cap">Собственное производство</div>
+      </div>
+      <div class="gitem tall reveal">
+        <img src="images/work-warehouse-glazing.jpg" alt="Панорамное остекление арочного складского здания">
+        <div class="cap">Остекление склада</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-admin-colonnade.jpg" alt="Административное здание с колоннадой и остеклением">
+        <div class="cap">Остекление фасада</div>
+      </div>
+      <div class="gitem wide reveal">
+        <img src="images/work-balcony-glazing.jpg" alt="Остекление балкона коттеджа алюминиевыми рамами">
+        <div class="cap">Остекление балкона</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-profile-closeup.jpg" alt="Крупный план профиля ПВХ-окна">
+        <div class="cap">Монтажный профиль ПВХ</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-warehouse-facade.jpg" alt="Остекление фасада производственного здания">
+        <div class="cap">Остекление цеха</div>
+      </div>
+      <div class="gitem reveal">
+        <img src="images/work-facade-window.jpg" alt="Окно в кирпичном фасаде дома в вечернем свете">
+        <div class="cap">Окна ПВХ · фасад</div>
+      </div>
+      <div class="gitem tall reveal">
+        <img src="images/work-warehouse-snow.jpg" alt="Арочное складское здание с остеклением зимой">
+        <div class="cap">Складской комплекс</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="profiles">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="tag tag-yellow eyebrow-tag -r2">Профильные системы</span>
-      <h2>Германия или Россия</h2>
-      <p>Подбираем систему под климат Актобе — перепады температуры и ветровые нагрузки.</p>
+<section class="financing" id="financing">
+  <div class="wrap fin-row">
+    <div>
+      <div class="eyebrow">Оплата</div>
+      <h2>Ставим окна сейчас — платите постепенно</h2>
+      <p style="margin-top:18px; color:var(--ink-soft); font-size:15.5px; max-width:440px;">Оформляем рассрочку прямо в WhatsApp или на месте у замерщика — без скрытых комиссий и лишних справок.</p>
+      <div class="fin-badges">
+        <div class="fin-badge">Kaspi Bank<small>Рассрочка 0%</small></div>
+        <div class="fin-badge">Halyk Bank<small>Рассрочка 0%</small></div>
+      </div>
     </div>
-    <div class="profiles-grid reveal">
-      <div class="stamp-card">
-        <div class="stamp-badge de">DE</div>
-        <h3>Немецкий профиль</h3>
-        <p>Для тех, кому важен максимальный ресурс и стабильная геометрия на годы.</p>
-        <ul>
-          <li>Усиленная многокамерная конструкция</li>
-          <li>Стабильность при морозах</li>
-          <li>Долгий срок службы фурнитуры</li>
-        </ul>
-      </div>
-      <div class="stamp-card">
-        <div class="stamp-badge ru">RU</div>
-        <h3>Российский профиль</h3>
-        <p>Оптимальное соотношение цены и качества для стандартного остекления.</p>
-        <ul>
-          <li>Быстрые сроки поставки</li>
-          <li>Хорошая теплоизоляция за разумные деньги</li>
-          <li>Проверенное решение для большинства проёмов</li>
-        </ul>
-      </div>
+    <div class="fin-panel">
+      <div class="big">2 <span>года</span></div>
+      <p>гарантии на фурнитуру, стеклопакет и монтажные работы по каждому договору</p>
+      <a class="btn btn-primary" style="margin-top:26px;" href="https://wa.me/77058663188" target="_blank" rel="noopener">Оформить рассрочку</a>
     </div>
   </div>
 </section>
 
-<section id="installment" class="installment">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="tag tag-yellow eyebrow-tag -r1">Оплата</span>
-      <h2>Рассрочка на месте</h2>
-      <p>Оформляем во время замера — не нужно ехать в отделение банка.</p>
-    </div>
-    <div class="inst-grid reveal">
-      <div class="bank-card">
-        <div class="chip"></div>
-        <div class="num">KASPI · HALYK</div>
-        <div class="row"><span>OLIMP STROY MARKET</span><span>АКТОБЕ</span></div>
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Контакты</div>
+      <h2>Обсудим ваш объект в Актобе</h2>
+      <p class="contact-desc">Напишите в WhatsApp или оставьте заявку — пришлём расчёт стоимости и согласуем удобное время для бесплатного замера.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://wa.me/77058663188" target="_blank" rel="noopener">
+          <span>WhatsApp<small>+7 705 866 31 88</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/olimp.stroymarket" target="_blank" rel="noopener">
+          <span>Instagram<small>@olimp.stroymarket</small></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="contact-link" href="#top">
+          <span>География<small>Актобе и область</small></span>
+          <span class="arrow">→</span>
+        </a>
       </div>
-      <div class="inst-copy">
-        <ul>
-          <li>Оформление документов прямо на объекте</li>
-          <li>Без справок о доходах для стандартной суммы</li>
-          <li>Первый платёж — после установки</li>
-          <li>Гарантия 2 года действует независимо от способа оплаты</li>
-        </ul>
-      </div>
     </div>
-  </div>
-</section>
 
-<section id="contact" class="contact">
-  <div class="wrap contact-inner">
-    <span class="tag -r1" style="background:#fff;">Актобе</span>
-    <h2>Готовы обсудить<br>ваш объект?</h2>
-    <p>Пришлите в WhatsApp фото проёмов и адрес — предложим время для бесплатного замера.</p>
-    <div class="contact-actions">
-      <a class="btn btn-dark" href="https://wa.me/77058663188" target="_blank" rel="noopener">Написать в WhatsApp</a>
-      <a class="btn" style="background:#fff;" href="https://www.instagram.com/olimp.stroymarket" target="_blank" rel="noopener">Instagram</a>
-    </div>
+    <form class="form-card" id="leadForm">
+      <h3>Заявка на замер</h3>
+      <p>Оставьте имя и телефон — свяжемся и рассчитаем стоимость.</p>
+      <div class="form-field">
+        <label for="fname">Имя</label>
+        <input id="fname" name="fname" type="text" placeholder="Как к вам обращаться" required>
+      </div>
+      <div class="form-field">
+        <label for="fphone">Телефон</label>
+        <input id="fphone" name="fphone" type="tel" placeholder="+7 7__ ___ __ __" required>
+      </div>
+      <div class="form-field">
+        <label for="fservice">Что интересует</label>
+        <select id="fservice" name="fservice">
+          <option>Пластиковые окна</option>
+          <option>Алюминиевые окна и двери</option>
+          <option>Остекление балкона</option>
+          <option>Входная группа</option>
+          <option>Остекление дома / коттеджа под ключ</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Отправить заявку в WhatsApp</button>
+      <p class="form-note">Нажимая кнопку, вы будете перенаправлены в WhatsApp с готовым сообщением менеджеру.</p>
+    </form>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <span>© 2026 OLIMP STROY MARKET · Актобе</span>
-    <span>+7 705 866 31 88</span>
+  <div class="wrap footer-row">
+    <span>© OLIMP StroyMarket — окна, балконы и двери в Актобе</span>
+    <a href="https://instagram.com/olimp.stroymarket" target="_blank" rel="noopener">Instagram @olimp.stroymarket</a>
+    <a href="https://wa.me/77058663188" target="_blank" rel="noopener">WhatsApp +7 705 866 31 88</a>
   </div>
 </footer>
 
+<a class="float-wa" href="https://wa.me/77058663188" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16.001 3C9.107 3 3.5 8.607 3.5 15.5c0 2.44.688 4.716 1.881 6.652L3 29l7.02-2.343A12.44 12.44 0 0 0 16 28c6.894 0 12.5-5.607 12.5-12.5S22.895 3 16.001 3zm0 22.7a10.17 10.17 0 0 1-5.29-1.47l-.38-.226-4.166 1.39 1.41-4.06-.247-.392A10.16 10.16 0 0 1 5.8 15.5c0-5.632 4.567-10.2 10.2-10.2 5.632 0 10.2 4.568 10.2 10.2 0 5.633-4.568 10.2-10.199 10.2zm5.59-7.64c-.306-.153-1.81-.893-2.09-.994-.28-.102-.484-.153-.687.153-.204.306-.79.994-.968 1.198-.178.204-.357.23-.663.077-.306-.153-1.292-.476-2.462-1.52-.91-.812-1.524-1.814-1.703-2.12-.178-.306-.02-.472.134-.624.137-.137.306-.357.459-.535.153-.178.204-.306.306-.51.102-.204.05-.383-.026-.535-.077-.153-.687-1.655-.941-2.267-.248-.596-.5-.516-.687-.525l-.586-.01c-.204 0-.535.077-.815.383-.28.306-1.068 1.044-1.068 2.546 0 1.502 1.093 2.953 1.245 3.157.153.204 2.15 3.283 5.208 4.605.728.314 1.296.502 1.738.643.73.232 1.394.199 1.919.121.585-.087 1.81-.74 2.065-1.454.255-.714.255-1.325.178-1.454-.076-.128-.28-.204-.586-.357z"/></svg>
+</a>
+
 <script>
-  function openLightbox(src){
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('open');
+  // mobile burger menu
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu(){
+    burgerBtn.classList.remove('active');
+    burgerBtn.setAttribute('aria-expanded','false');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
   }
-  function closeLightbox(){
-    document.getElementById('lightbox').classList.remove('open');
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  burgerBtn.addEventListener('click', ()=>{
+    const isOpen = mobileMenu.classList.toggle('open');
+    burgerBtn.classList.toggle('active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeMenu));
+  window.addEventListener('resize', ()=>{ if(window.innerWidth > 980) closeMenu(); });
+
+  // scroll reveal
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+
+  // lead form -> whatsapp
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value;
+    const text = `Здравствуйте! Меня зовут ${name}. Интересует: ${service}. Телефон для связи: ${phone}`;
+    const url = `https://wa.me/77058663188?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  });
 </script>
 
 </body>
