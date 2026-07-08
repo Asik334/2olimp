@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OLIMP StroyMarket — окна, двери, балконы в Актобе</title>
 <meta name="description" content="Пластиковые и алюминиевые окна, балконы, двери и остекление коттеджей под ключ в Актобе. Собственное производство. Рассрочка Kaspi и Halyk.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -76,12 +79,13 @@
   }
   .brand{ display:flex; align-items:center; gap:10px; }
   .brand-mark{
-    width:38px; height:38px; flex:none;
-    background:var(--ink);
+    width:40px; height:40px; flex:none;
+    background:#fff;
     display:flex; align-items:center; justify-content:center;
-    position:relative;
+    position:relative; overflow:hidden;
+    border-radius:8px; border:1px solid var(--line);
   }
-  .brand-mark svg{ width:22px; height:22px; }
+  .brand-mark img{ width:100%; height:100%; object-fit:cover; display:block; }
   .brand-name{
     font-family:'Golos Text', sans-serif;
     font-weight:800; font-size:16.5px; letter-spacing:-0.01em; line-height:1.05;
@@ -433,6 +437,8 @@
   }
   .footer-row a{ color:#c9c1b0; }
   .footer-row a:hover{ color:#fff; }
+  .footer-brand{ display:flex; align-items:center; gap:10px; }
+  .footer-brand img{ width:26px; height:26px; border-radius:6px; flex:none; }
 
   /* ---------- floating whatsapp ---------- */
   .float-wa{
@@ -480,7 +486,7 @@
   <div class="nav">
     <a href="#top" class="brand">
       <div class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 3H21V21H3V3Z" stroke="#efe9db" stroke-width="1.6"/><path d="M12 3V21M3 12H21" stroke="#efe9db" stroke-width="1.6"/></svg>
+        <img src="images/logo-mark.png" alt="Логотип OLIMP StroyMarket">
       </div>
       <div class="brand-name">OLIMP StroyMarket<span>Окна · Балконы · Двери · Актобе</span></div>
     </a>
@@ -509,7 +515,7 @@
 </header>
 
 <section class="hero" id="top">
-  <img class="hero-img" src="images/work-admin-colonnade.jpg" alt="Дом со стеклопакетами и алюминиевыми окнами, реализованный проект OLIMP StroyMarket в Актобе">
+  <img class="hero-img" src="images/work-stone-house-main.jpg" alt="Дом со стеклопакетами и алюминиевыми окнами, реализованный проект OLIMP StroyMarket в Актобе">
   <div class="hero-inner">
     <div class="hero-tag"><span class="dot"></span>Актобе и область · замер бесплатно</div>
     <h1 class="hero-title">Пластиковые<br>окна ·<em>на заказ</em></h1>
@@ -647,7 +653,7 @@
       <a class="btn btn-primary" style="margin-top:32px;" href="https://wa.me/77058663188" target="_blank" rel="noopener">Узнать сроки и цену</a>
     </div>
     <div class="production-photo">
-      <img src="images/work-facade-window.jpg" alt="Производственный цех OLIMP StroyMarket — стопки готовых пластиковых окон перед доставкой">
+      <img src="images/production-frames.jpg" alt="Производственный цех OLIMP StroyMarket — стопки готовых пластиковых окон перед доставкой">
       <div class="frame-tag">Цех в Актобе</div>
     </div>
   </div>
@@ -664,15 +670,19 @@
     </div>
     <div class="gallery-grid">
       <div class="gitem wide tall reveal">
-        <img src="images/work-stone-house-main.jpg" alt="Готовый дом из ракушечника с алюминиевыми окнами, угловой ракурс">
-        <div class="cap">Дом под ключ · алюминиевые окна</div>
+      <img src="images/WhatsApp Image 2026-07-08 at 23.08.32.jpeg" alt="...">
+      <div class="cap">Дом под ключ · алюминиевые окна</div>
+      </div>
+        <div class="gitem reveal">
+        <img src="images/WhatsApp Image 2026-07-08 at 22.59.04.jpeg" alt="Крупный план профиля ПВХ-окна">
+        <div class="cap">Монтажный профиль ПВХ</div>
       </div>
       <div class="gitem reveal">
         <img src="images/work-showroom.jpg" alt="Офис и шоурум OLIMP StroyMarket с остеклённым фасадом">
         <div class="cap">Шоурум OLIMP StroyMarket</div>
       </div>
       <div class="gitem reveal">
-        <img src="images/WhatsApp Image 2026-07-07 at 21.23.36 (1).jpeg" alt="Остекление многоэтажного административного здания">
+        <img src="images/WhatsApp Image 2026-07-07 at 21.23.36.jpeg" alt="Остекление многоэтажного административного здания">
         <div class="cap">Остекление админздания</div>
       </div>
       <div class="gitem tall reveal">
@@ -696,16 +706,12 @@
         <div class="cap">Остекление склада</div>
       </div>
       <div class="gitem reveal">
-        <img src="images/WhatsApp Image 2026-07-08 at 22.59.04.jpeg" alt="Административное здание с колоннадой и остеклением">
+        <img src="images/work-admin-colonnade.jpg" alt="Административное здание с колоннадой и остеклением">
         <div class="cap">Остекление фасада</div>
       </div>
       <div class="gitem wide reveal">
         <img src="images/work-balcony-glazing.jpg" alt="Остекление балкона коттеджа алюминиевыми рамами">
         <div class="cap">Остекление балкона</div>
-      </div>
-      <div class="gitem reveal">
-        <img src="images/WhatsApp Image 2026-07-07 at 21.23.36.jpeg" alt="Крупный план профиля ПВХ-окна">
-        <div class="cap">Монтажный профиль ПВХ</div>
       </div>
       <div class="gitem reveal">
         <img src="images/work-warehouse-facade.jpg" alt="Остекление фасада производственного здания">
@@ -790,7 +796,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>© OLIMP StroyMarket — окна, балконы и двери в Актобе</span>
+    <span class="footer-brand"><img src="images/logo-mark.png" alt="OLIMP StroyMarket"> © OLIMP StroyMarket — окна, балконы и двери в Актобе</span>
     <a href="https://instagram.com/olimp.stroymarket" target="_blank" rel="noopener">Instagram @olimp.stroymarket</a>
     <a href="https://wa.me/77058663188" target="_blank" rel="noopener">WhatsApp +7 705 866 31 88</a>
   </div>
